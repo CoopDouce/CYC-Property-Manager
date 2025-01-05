@@ -1,27 +1,27 @@
+import React from "react";
 import "./default.css";
 
 const Default = () => {
     return (
         <div className="defaultContent">
-        <div className="defaultCard">
-            <h1>What is ChromaTune</h1>
-            <div className="defaultCardText">
-                <p>
-                    ChromaTune is a web application that generates playlists based on your mood.
-                </p>
-                <p>
-                    We use the Spotify API to generate a playlist that is tailored to your mood.
-                </p>
+            <div className="defaultImage">
+                <div className="rectangleLeft"></div>
+                <div className="rectangleRight"></div>
+                <img src="/assets/defaultImage.jpg" alt="Associates Planning" className="defaultImg"></img>
             </div>
-        </div>
-        <div className="defaultCard">
-            <h1>How to use ChromaTune</h1>
-            <div className="defaultCardText">
-                <p>Click on the "New" tab in the nav bar and select a mood from the dropdown.</p>
-                <p>After you have selected your mood, a generated playlist will appear just for you!</p>
+            <div className="imageTopper">
+                <h2 className="defaultFree">We Are Completely Free!</h2>
             </div>
-        </div>
-    </div> 
+            <div className="defaultCard">
+                <div className="defaultCardBar"></div>
+                <div className="defaultCardText">
+                    <h2>Welcome to CYC Property Manager</h2>
+                    <p>
+                        We are a property management company that specializes in managing properties for landlords. We provide a variety of services to help landlords manage their properties. We are dedicated to providing excellent service to our clients and helping them achieve their property management goals.
+                    </p>
+                </div>
+            </div>
+        </div> 
     );
 };
 
