@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
+
+:root {
+    --background: #ffffff;
+    --nav-background: #c0c0c0;
+    --black-text: rgba(0, 0, 0, 0.87);
+    --white-text: rgba(255, 255, 255, 0.87);
+    --white-primary: #ffffff;
+    --black-primary: #000000;
+    --header-bar-blue: #007AC1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'open sans condensed', sans-serif;
+    background-color: var(--background);
+    color: var(--white-text);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
