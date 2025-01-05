@@ -1,0 +1,69 @@
+.navContainer {
+    display: block;
+    position: absolute;
+    padding: 0;
+    height: 40px;
+    width: 100%;
+    top: 180px;
+    left: 0px;
+    right: 0;
+    padding-left: 50px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-background);
+    color: var(--black-text);
+}
+
+.navList {
+    padding: 0;
+    margin: 0;
+    color: var(--black-text);
+}
+
+.link {
+    text-decoration: none;
+    color: var(--black-text);
+    
+}
+
+.activeLink {
+    text-decoration: none;
+    color: var(--black-text);
+}
+
+.navItemDefault, .navItemMap, .navItemManage  {
+    display: block;
+    position: relative;
+    height: 40px;
+    width: 120px;
+    float: left;
+    list-style: none;
+    padding: 10px;
+}
+
+.navItemDefault::before , .navItemMap::before , .navItemManage::before  {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    transition: 0.5s transform ease;
+    transform: scale3d(0, 1.5, 1);
+    transform-origin: 0 50%;
+}
+
+
+.navItemDefault:hover::before , .navItemMap:hover::before , .navItemManage:hover::before {
+    transform: scale3d(1, 1, 1);
+}
+
+.navItemDefault::before , .navItemMap::before , .navItemManage::before  {
+    background: var(--header-bar-blue);
+    transform-origin: 100% 50%;
+}
+
+.navItemDefault:hover::before , .navItemMap:hover::before , .navItemManage:hover::before {
+    transform-origin: 0 50%;
+}
