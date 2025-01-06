@@ -88,7 +88,6 @@ These are the steps to get the app on your machine
     Create the .env file in the root directory and add the environment variables
 
     ```bash
-
     ```
 
 4. **Run the Application**
