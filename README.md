@@ -32,15 +32,15 @@
 
 **Landing Page**
 
-![Landing Page](assets\landingPage.png)
+![Landing Page](assets/landingPage.png)
 
 **Map Page**
 
-![Map Page](assets\mapPage.png)
+![Map Page](assets/mapPage.png)
 
 **Manage Page**
 
-![Manage Page](assets\managePage.png)
+![Manage Page](assets/managePage.png)
 
 - [Table of Contents](#table-of-contents)
 ---
