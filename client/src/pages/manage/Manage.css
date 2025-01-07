@@ -45,7 +45,7 @@ p {
 }
 
 .propertyOne, .propertyTwo, .propertyThree {
-    width: 500px;
+    min-width: 500px;
     margin: 0px 20px;
     background-color: var(--white-primary);
     border: 5px solid var(--header-bar-blue);
@@ -70,17 +70,20 @@ p {
 }
 
 .propertyAdd {
-    width: 500px;
+    min-width: 300px;
     margin: 0px 20px;
     background-color: var(--white-primary);
     border: 5px solid;
     border-image: linear-gradient(90deg, var(--header-bar-blue), transparent) 1;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 .plusSign {
     font-size: 50px;
+    width: 100px;
+    height: 100px;
     color: var(--nav-background);
+    background-color: var(--white-primary);
     opacity: 75%;
     margin: 0 auto;
 }

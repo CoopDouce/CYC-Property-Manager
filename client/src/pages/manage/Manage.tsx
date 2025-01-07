@@ -43,7 +43,37 @@ const Manage = () => {
                     </div>
                     <div className="propertyAdd">
                         <h1>Add Property</h1>
-                        <p className="plusSign">&#65291;</p>
+                        <button className="plusSign" onClick={() => { document.getElementById('id02')!.style.display = 'block'; }}>&#65291;</button>
+                    </div>
+                    <div id="id02" className="modal">
+                        <form className="modal-content animate" action="/action_page.php" method="post">
+                            <div className="modalContent">
+                                <span onClick={() => { document.getElementById('id02')!.style.display = 'none'; }} className="close" title="Close Modal">&times;</span>
+                                
+                                <label htmlFor="address"><b>Address</b></label>
+                                <input type="text" placeholder="Enter Address" name="address" required />
+                                
+                                <label htmlFor="city"><b>City</b></label>
+                                <input type="text" placeholder="Enter City" name="city" required />
+                                
+                                <label htmlFor="state"><b>State</b></label>
+                                <input type="text" placeholder="Enter State" name="state" required />
+                                
+                                <label htmlFor="zip"><b>Zip Code</b></label>
+                                <input type="text" placeholder="Enter Zip Code" name="zip" required />
+                                
+                                <label htmlFor="rent"><b>Rent Price</b></label>
+                                <input type="text" placeholder="Enter Rent Price" name="rent" required />
+                                
+                                <label htmlFor="tenant"><b>Current Tenant</b></label>
+                                <input type="text" placeholder="Enter Current Tenant" name="tenant" required />
+                                
+                                <label htmlFor="room"><b>Room Type</b></label>
+                                <input type="text" placeholder="Enter Room Type" name="room" required />
+                                
+                                <button type="submit">Add Property</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
