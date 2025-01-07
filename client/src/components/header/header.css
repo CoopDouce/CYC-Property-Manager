@@ -197,12 +197,38 @@ input[type=text], input[type=password] {
     }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 719px) {
+    img.CYC-Logo {
+        position: absolute;
+        width: 200px;
+        height: 150px;
+        bottom: -70px;
+        right: 60px;
+    }
+    .headerTitle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 431px) {
     span.psw {
         display: block;
         float: none;
     }
     .cancelbtn {
         width: 100%;
+    }
+    img.CYC-Logo {
+        position: absolute;
+        width: 200px;
+        height: 150px;
+        bottom: -70px;
+        right: 60px;
+    }
+    .headerTitle {
+        display: none;
+    }
+    .modal {
+        width: 430px;
     }
 }

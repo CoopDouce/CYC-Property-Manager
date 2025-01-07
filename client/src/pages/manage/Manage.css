@@ -1,0 +1,90 @@
+.manageContent {
+    margin-top: 220px;
+}
+
+.manageArray {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.manageHeader {
+    position: absolute;
+    font-size: 40px;
+    top: 270px;
+    width: 600px;
+    background-color: var(--nav-background);
+    border: 1px solid var(--nav-background);
+    border-radius: 10px;
+}
+
+h1 {
+    color: var(--black-text);
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p {
+    position: relative;
+    width: 100%;
+    color: var(--black-text);
+}
+
+.manageBar {
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    padding: 20px 0px 20px 0px;
+    background-color: var(--nav-background);
+    overflow-x: scroll;
+    scrollbar-width: wide;
+    scrollbar-color: var(--header-bar-blue) var(--nav-background);
+    background-color: var(--nav-background);
+    border: 1px solid var(--nav-background);
+}
+
+.propertyOne, .propertyTwo, .propertyThree {
+    width: 500px;
+    margin: 0px 20px;
+    background-color: var(--white-primary);
+    border: 5px solid var(--header-bar-blue);
+    border-radius: 20px;
+}
+
+.propertyOneImg, .propertyTwoImg, .propertyThreeImg {
+    width: 300px;
+    height: 300px;
+    border: 1px solid var(--header-bar-blue);
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+.propertyInfo {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid var(--header-bar-blue);
+    border-radius: 20px;
+}
+
+.propertyAdd {
+    width: 500px;
+    margin: 0px 20px;
+    background-color: var(--white-primary);
+    border: 5px solid;
+    border-image: linear-gradient(90deg, var(--header-bar-blue), transparent) 1;
+    border-radius: 50px;
+}
+
+.plusSign {
+    font-size: 50px;
+    color: var(--nav-background);
+    opacity: 75%;
+    margin: 0 auto;
+}
+
+.plusSign::hover {
+    opacity: 100%;
+}
