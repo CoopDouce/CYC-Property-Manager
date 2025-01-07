@@ -7,8 +7,6 @@ import Map from "./pages/map/Map.tsx";
 import Manage from "./pages/manage/Manage.tsx";
 import "./index.css";
 
-const port = process.env.PORT || 4000; // Port number
-
 console.log("Starting the application...");
 
 const router = createBrowserRouter([

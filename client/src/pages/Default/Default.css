@@ -24,22 +24,6 @@ img.defaultImg {
     z-index: 2;
 }
 
-.rectangleLeft, .rectangleRight {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-top: 220px;
-    height: 580px;
-    width: 50%;
-    background: linear-gradient(to right, var(--header-bar-blue), transparent);
-    z-index: 1;
-}
-
-.rectangleRight {
-    left: 50%;
-    background: linear-gradient(to left, var(--header-bar-blue), transparent);
-}
-
 .defaultFree {
     color: var(--black-text);
     transform: skew(-20deg);

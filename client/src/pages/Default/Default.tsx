@@ -5,8 +5,6 @@ const Default = () => {
     return (
         <div className="defaultContent">
             <div className="defaultImage">
-                <div className="rectangleLeft"></div>
-                <div className="rectangleRight"></div>
                 <img src="/assets/defaultImage.jpg" alt="Associates Planning" className="defaultImg"></img>
             </div>
             <div className="imageTopper">
