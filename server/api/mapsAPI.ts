@@ -8,7 +8,7 @@ router.post('/getDirections', async (req: Request, res: Response) => {
     const {origin, destination} = req.body;
 
     const myHeaders = new Headers();
-    myHeaders.append("apikey", "AIzaSyAOeDzHH74zqFqfqgKOdnx8LFa1AhtuoVM");
+    myHeaders.append("apikey", "GOOGLE_MAPS_API_KEY");
 
     const requestOptions = {
         method: 'GET',

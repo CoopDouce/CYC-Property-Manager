@@ -14,7 +14,7 @@ const router = Router();
 router.get('/maps', (req, res) => _awaiter(void 0, void 0, void 0, function* () {
     const { address } = req.query;
     const myHeaders = new fetch.Headers();
-    myHeaders.append("apikey", 'AIzaSyAOeDzHH74zqFqfqgKOdnx8LFa1AhtuoVM');
+    myHeaders.append("apikey", 'GOOGLE_MAPS_API_KEY');
 
     const requestOptions = {
         method: 'GET',
