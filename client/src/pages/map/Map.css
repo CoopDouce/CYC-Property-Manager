@@ -6,3 +6,17 @@
     margin: 0 auto;
     width: 1000px;
 }
+
+.mapInstructions {
+    background-color: var(--nav-background);
+    border: 0.1px solid var(--nav-background);
+    border-radius: 0px 0px 10px 10px;
+    width: 500px;
+    height: 125px;
+    margin: 0 auto;
+}
+
+p.mapFooter {
+    margin-top: 30px;
+    font-size: 20px;
+}

@@ -50,7 +50,7 @@
 - **Front-End**: React, TypeScript
 - **Back-End**: Node.js, Mongoose
 - **Database**: MongoDB Atlas
-- **API**: OpenStreet
+- **API**: Google Maps API
 - **Deployment**: Render
 - **Branching and Merging** Github
 
@@ -59,7 +59,7 @@
 
 ## **Features**
 
-- **Interactive Map** using the OpenStreetAPI
+- **Interactive Map** using the Google Maps API
 - **React** Functionality
 - **Database** to store properties for convenience
 
@@ -88,6 +88,8 @@ These are the steps to get the app on your machine
     Create the .env file in the root directory and add the environment variables
 
     ```bash
+    MONGO_URI=
+    GOOGLE_MAPS_API_KEY=
     ```
 
 4. **Run the Application**

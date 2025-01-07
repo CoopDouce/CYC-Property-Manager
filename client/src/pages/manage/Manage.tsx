@@ -1,54 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Manage.css";
 
+interface Property {
+    address: string;
+    city: string;
+    state: string;
+    photo?: string;
+    rent: string;
+    tenant: string;
+    room: string;
+}
+
 const Manage = () => {
+    const [properties, setProperties] = useState<Property[]>([
+        {
+            address: "1100 Lake Dr",
+            city: "Medford",
+            state: "New York",
+            photo: "assets/propertyOne.png",
+            rent: "$2,548",
+            tenant: "N/A",
+            room: "Single",
+        },
+        {
+            address: "77 Clinton St",
+            city: "New York Mills",
+            state: "New York",
+            photo: "assets/propertyTwo.png",
+            rent: "$1,200",
+            tenant: "Harvey King",
+            room: "Double",
+        },
+        {
+            address: "1100 Avenue At Port",
+            city: "Weehawken",
+            state: "New Jersey",
+            photo: "assets/propertyThree.png",
+            rent: "$4,756",
+            tenant: "Daisy Gamble",
+            room: "Studio",
+        },
+    ]);
+
+    const newProperty = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        const newProp: Property = {
+            address: formData.get("address") as string,
+            city: formData.get("city") as string,
+            state: formData.get("state") as string,
+            photo: formData.get("photo") as string,
+            rent: formData.get("rent") as string,
+            tenant: formData.get("tenant") as string,
+            room: formData.get("room") as string,
+        };
+        setProperties([...properties, newProp]);
+        document.getElementById('id02')!.style.display = 'none';
+    };
+
+    const deleteProperty = (index: number) => {
+        const newProperties = properties.filter((_, i) => i !== index);
+        setProperties(newProperties);
+    };
+
     return (
         <div className="manageContent">
-            <h1>Your Properties</h1>
-            <div className="manageArray">
-                <p className="manageHeader">Here is Your Properties:</p>
-                <div className="manageBar">
-                    <div className="propertyOne">
-                        <p>1100 Lake Dr</p>
-                        <p> Medford, New York</p>
-                        <br></br>
-                        <img src="/assets/propertyOne.png" alt="Property One" className="propertyOneImg"></img>
-                        <div className="propertyInfo">
-                            <p>Rent Price: $2,548</p>
-                            <p>Current Tenant: N/A</p>
-                            <p>Room Type: Single</p>
-                        </div>
+            <div className="propertyAdd">
+                <div>
+                    <button className="plusSign" onClick={() => { document.getElementById('id02')!.style.display = 'block'; }}>Add Property &#65291;</button>
+                </div>
                     </div>
-                    <div className="propertyTwo">
-                        <p>77 Clinton St</p>
-                        <p> New York Mills, New York</p>
-                        <br></br>
-                        <img src="/assets/propertyTwo.png" alt="Property Two" className="propertyTwoImg"></img>
-                        <div className="propertyInfo">
-                            <p>Rent Price: $1,200</p>
-                            <p>Current Tenant: Harvey King</p>
-                            <p>Room Type: Double</p>
-                        </div>
-                    </div>
-                    <div className="propertyThree">
-                        <p>1100 Avenue At Port</p>
-                        <p> Weehawken, New Jersey</p>
-                        <br></br>
-                        <img src="/assets/propertyThree.png" alt="Property Three" className="propertyThreeImg"></img>
-                        <div className="propertyInfo">
-                            <p>Rent Price: $4,756</p>
-                            <p>Current Tenant: Daisy Gamble</p>
-                            <p>Room Type: Studio</p>
-                        </div>
-                    </div>
-                    <div className="propertyAdd">
-                        <h1>Add Property</h1>
-                        <button className="plusSign" onClick={() => { document.getElementById('id02')!.style.display = 'block'; }}>&#65291;</button>
-                    </div>
-                    <div id="id02" className="modal">
-                        <form className="modal-content animate" action="/action_page.php" method="post">
-                            <div className="modalContent">
-                                <span onClick={() => { document.getElementById('id02')!.style.display = 'none'; }} className="close" title="Close Modal">&times;</span>
+                    <div id="id02" className="modalManage">
+                        <form className="modalManage-content animate" onSubmit={newProperty}>
+                            <div className="modalImg">
+                                <span onClick={() => { document.getElementById('id02')!.style.display = 'none'; }} className="closeManage" title="Close Modal">&times;</span>
+                                <img src="assets/newPropertyImg.png" alt="New Property" className="newPropertyImg" />
+                            </div>
+                            <div className="modalManageInformation">
                                 
                                 <label htmlFor="address"><b>Address</b></label>
                                 <input type="text" placeholder="Enter Address" name="address" required />
@@ -56,11 +84,11 @@ const Manage = () => {
                                 <label htmlFor="city"><b>City</b></label>
                                 <input type="text" placeholder="Enter City" name="city" required />
                                 
+                                <label htmlFor="photo"><b>Photo Link</b></label>
+                                <input type="text" placeholder="Enter Photo Link" name="photo" />
+
                                 <label htmlFor="state"><b>State</b></label>
                                 <input type="text" placeholder="Enter State" name="state" required />
-                                
-                                <label htmlFor="zip"><b>Zip Code</b></label>
-                                <input type="text" placeholder="Enter Zip Code" name="zip" required />
                                 
                                 <label htmlFor="rent"><b>Rent Price</b></label>
                                 <input type="text" placeholder="Enter Rent Price" name="rent" required />
@@ -75,9 +103,27 @@ const Manage = () => {
                             </div>
                         </form>
                     </div>
+            <div className="manageArray">
+                <p className="manageHeader">Here is Your Properties:</p>
+                <div className="manageBar">
+                        {properties.map((property, index) => (
+                            <div key={index} className="propertyCard">
+                                <p>{property.address}</p>
+                                <p>{property.city}, {property.state}</p>
+                                <br />
+                                <img src={property.photo} alt={property.photo} className="propertyImg" />
+                                <div className="propertyInfo">
+                                    <p>Rent Price: {property.rent}</p>
+                                    <p>Current Tenant: {property.tenant}</p>
+                                    <p>Room Type: {property.room}</p>
+                                </div>
+                                <button className="deleteButton" onClick={() => deleteProperty(index)}>Delete</button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div> 
+         
     );
 };
 
